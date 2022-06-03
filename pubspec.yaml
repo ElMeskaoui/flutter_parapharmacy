@@ -79,7 +79,10 @@ flutter:
        - asset: fonts/Andika-Italic.ttf
    - family: PlayfairDisplay
      fonts:
-       - asset: fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf     
+       - asset: fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf
+   - family: VarelaRound
+     fonts:
+       - asset: fonts/VarelaRound-Regular.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
