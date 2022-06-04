@@ -25,14 +25,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 49, 132, 204),
+      backgroundColor: Color.fromARGB(212, 184, 233, 225),
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Stack(alignment: Alignment.center, children: [
-            CircleAvatar(
-              backgroundColor: Colors.white,
-              radius: 90,
-              child: Padding(
+        child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Image(
                   image: AssetImage('images/logo1.png'),
@@ -40,17 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   height: 500,
                 ),
               ),
-            ),
-          ]),
-          SizedBox(
-            height: 5,
-          ),
-          Text('ParaPharmacy',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25))
-        ]),
+
       ),
     );
   }

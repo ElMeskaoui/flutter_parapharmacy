@@ -1,21 +1,4 @@
 import 'package:flutter/material.dart';
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
-// class signInScreenState extends StatefulWidget {
-//   signInScreenState({Key? key}) : super(key: key);
-//   @override
-//   State<signInScreenState> createState() => _signInScreenState();
-// }
-// class _signInScreenState extends State<signInScreenState> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.blue,
-//     );
-//   }
-// }
-
-// ignore_for_file: prefer_const_constructors
 
 void main() => runApp(MyApp());
 
@@ -23,6 +6,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
@@ -38,7 +22,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: MyDrawer(),
-        appBar: AppBar(),
+        appBar: AppBar(
+          actions: [Container(
+            child: Image.asset('images/logo1.png',width: 90,),
+          ),],
+          elevation: 10,
+          backgroundColor: Color.fromARGB(100, 90, 240, 240),
+        ),
         body: SingleChildScrollView(
           child: Column(
             // ignore: prefer_const_literals_to_create_immutables
