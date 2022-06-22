@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
+import 'google_map_screen.dart';
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
@@ -22,13 +25,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: MyDrawer(),
-        appBar: AppBar(
-          actions: [Container(
-            child: Image.asset('images/logo1.png',width: 90,),
-          ),],
-          elevation: 10,
-          backgroundColor: Color.fromARGB(100, 90, 240, 240),
-        ),
+        appBar: AppBar(),
         body: SingleChildScrollView(
           child: Column(
             // ignore: prefer_const_literals_to_create_immutables
@@ -625,7 +622,20 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-        ));
+        ),
+        //
+        //
+        //icons maps:
+          floatingActionButton: FloatingActionButton(
+          onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => GoogleMapScreen(),
+              )),
+          tooltip: 'Increment',
+          child: const Icon(Icons.pin_drop_rounded),
+        )
+        );
   }
 }
 
