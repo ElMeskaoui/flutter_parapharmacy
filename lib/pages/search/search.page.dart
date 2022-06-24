@@ -80,7 +80,9 @@ class _SearchPageState extends State<SearchPage> {
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(8.0),
-                                            child: Image.network('https://newassets.apollo247.com/pub/media/${productsDetails[index]['thumbnail']}',),
+                                            child: Image.network('https://newassets.apollo247.com/pub/media/${productsDetails[index]['thumbnail']}',
+                                            width: 150,
+                                            height: 150,),
                                           )),),
                                     SizedBox(width: 18,),
                                     Expanded(
@@ -98,7 +100,7 @@ class _SearchPageState extends State<SearchPage> {
                                 ),
                               )),
                         ),
-                        separatorBuilder: (context, index)=> Divider(height: 9, color: Color.fromARGB(212, 184, 233, 225)),
+                        separatorBuilder: (context, index)=> Divider(height: 8, color: Color.fromARGB(212, 184, 233, 225)),
                         itemCount: productsDetails==null?0:productsDetails.length)
                   ],
                 ),
@@ -107,9 +109,11 @@ class _SearchPageState extends State<SearchPage> {
           } else {
             return Container(
               width: double.infinity,
-              child:Center(child: CircularProgressIndicator(
-                color: Colors.blueAccent,
-              ),),);
+              child:Center(
+                  child: Image.network('https://media.giphy.com/media/PUYgk3wpNk0WA/giphy.gif',
+                    width: MediaQuery.of(context).size.width,
+                  )
+              ),);
           }
         },
       ),

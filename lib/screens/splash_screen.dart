@@ -32,11 +32,13 @@ class _SplashScreenState extends State<SplashScreen> {
           alignment: Alignment.center,
           child: Column(
             children: [
+              SizedBox(height: 200,),
               Padding(
                       padding: const EdgeInsets.symmetric(vertical: 20.0),
-                      child: Image.network('https://media.giphy.com/media/lPeXaPf2H53EHkz5yJ/giphy.gif', width: 200, height: 200,)
+                      child: Image.network('https://media.giphy.com/media/xTdAjyBjcMODnF7ZII/giphy.gif',
+                        width: MediaQuery.of(context).size.width,
+                      )
                     ),
-              Text("data")
             ],
           ),
         ),

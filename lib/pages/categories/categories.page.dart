@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_parapharmacy/pages/product/productPage.dart';
 import 'package:http/http.dart' as http;
+import 'package:loading_indicator/loading_indicator.dart';
+
 
 class CategoriesPage extends StatefulWidget{
 
@@ -99,9 +101,11 @@ class _CategoriesPageState extends State<CategoriesPage> {
           } else {
             return Container(
               width: double.infinity,
-              child:Center(child: CircularProgressIndicator(
-                color: Colors.blueAccent,
-              ),),);
+              child: LoadingIndicator(
+                indicatorType: Indicator.ballScale,
+                colors: [Color.fromARGB(212, 184, 233, 225)],
+              )
+            );
           }
         },
       ),

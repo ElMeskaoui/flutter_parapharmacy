@@ -182,9 +182,12 @@ class _ProductPageState extends State<ProductPage> {
           } else {
             return Container(
               width: double.infinity,
-              child:Center(child: CircularProgressIndicator(
-                color: Colors.blueAccent,
-              ),),);
+              child:Center(
+                child: Image.network('https://media.giphy.com/media/PUYgk3wpNk0WA/giphy.gif',
+                  width: MediaQuery.of(context).size.width,
+                )
+              ),
+            );
           }
         },
       )
