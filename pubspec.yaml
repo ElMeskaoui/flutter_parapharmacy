@@ -27,6 +27,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  image_network:
+  http:
   flutter:
     sdk: flutter
 
@@ -84,6 +86,9 @@ flutter:
    - family: VarelaRound
      fonts:
        - asset: fonts/VarelaRound-Regular.ttf
+   - family: Amiri
+     fonts:
+       - asset: fonts/Amiri-BoldItalic.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
