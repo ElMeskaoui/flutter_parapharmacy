@@ -43,7 +43,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("categories")),
+      appBar: AppBar(title: Text("categories"),backgroundColor: Color.fromARGB(255, 124, 208, 219)),
       body: FutureBuilder(
         future: _loadSearch(),
         builder:
@@ -99,12 +99,14 @@ class _CategoriesPageState extends State<CategoriesPage> {
               ),
             );
           } else {
-            return Container(
-              width: double.infinity,
-              child: LoadingIndicator(
-                indicatorType: Indicator.ballScale,
-                colors: [Color.fromARGB(212, 184, 233, 225)],
-              )
+            return Center(
+              child: Container(
+                width: double.infinity,
+                child: LoadingIndicator(
+                  indicatorType: Indicator.ballScale,
+                  colors: [Color.fromARGB(212, 184, 233, 225)],
+                )
+              ),
             );
           }
         },

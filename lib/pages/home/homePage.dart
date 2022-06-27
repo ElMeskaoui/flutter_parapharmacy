@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter_parapharmacy/pages/contact/contact.page.dart';
 import 'package:flutter_parapharmacy/pages/product/productPage.dart';
 import 'package:flutter_parapharmacy/pages/search/search.page.dart';
 import 'package:flutter_parapharmacy/screens/google_map_screen.dart';
@@ -48,7 +49,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Home'),),
+      appBar: AppBar(
+        title: Text('Home'),
+        backgroundColor: Color.fromARGB(255, 124, 208, 219),
+      ),
+
       drawer: MyDrawer(),
       body: Center(
         child: Column(
@@ -211,7 +216,7 @@ class _HomePageState extends State<HomePage> {
                         child: Align(
                           alignment: Alignment.topLeft,
                           child: Text(
-                            "Categorie",
+                            "Great Deals for Everyday Life",
                             style: TextStyle(
                               fontSize: 20.0,
                               fontFamily: "Andika",
@@ -408,7 +413,7 @@ class MyDrawer extends StatelessWidget {
                       onTap:() => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HomePage(),
+                            builder: (context) => ContactPage(),
                           )),
                       child: Row(
                         children: [

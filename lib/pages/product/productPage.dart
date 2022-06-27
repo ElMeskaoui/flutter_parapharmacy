@@ -4,6 +4,7 @@ import 'package:image_network/image_network.dart';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:loading_indicator/loading_indicator.dart';
 class ProductPage extends StatefulWidget{
 
   int? id;
@@ -41,7 +42,7 @@ class _ProductPageState extends State<ProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Product ${widget.id}",)),
+      appBar: AppBar(title: Text("Product"),backgroundColor: Color.fromARGB(255, 124, 208, 219)),
       body:FutureBuilder(
         future: _loadProduct(),
         builder:
@@ -94,7 +95,7 @@ class _ProductPageState extends State<ProductPage> {
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 310),
-                              child: Text("${product['formats'][0]['pricer']['prices']['ListPrice']['value']}\$",
+                              child: Text("${product['formats'][0]['pricer']['prices']['ListPrice']['value']} Dh",
                                 style: TextStyle(fontSize: 20,
                                     color: Color.fromARGB(212, 157, 210, 202),
                                     fontFamily: "VarelaRound"),),
@@ -180,12 +181,13 @@ class _ProductPageState extends State<ProductPage> {
               ),
             );
           } else {
-            return Container(
-              width: double.infinity,
-              child:Center(
-                child: Image.network('https://media.giphy.com/media/PUYgk3wpNk0WA/giphy.gif',
-                  width: MediaQuery.of(context).size.width,
-                )
+            return  Center(
+              child: Container(
+                  width: double.infinity,
+                  child: LoadingIndicator(
+                    indicatorType: Indicator.ballScale,
+                    colors: [Color.fromARGB(212, 184, 233, 225)],
+                  )
               ),
             );
           }

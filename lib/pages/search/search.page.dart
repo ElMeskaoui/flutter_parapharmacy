@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_parapharmacy/pages/product2/productPage2.dart';
 import 'package:http/http.dart' as http;
+import 'package:loading_indicator/loading_indicator.dart';
 
 
 class SearchPage extends StatefulWidget{
@@ -42,7 +43,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("${widget.searchTo}")),
+      appBar: AppBar(title: Text("${widget.searchTo}"),backgroundColor: Color.fromARGB(255, 124, 208, 219)),
       body: FutureBuilder(
         future: _loadSearch(),
         builder:
@@ -107,13 +108,15 @@ class _SearchPageState extends State<SearchPage> {
               ),
             );
           } else {
-            return Container(
-              width: double.infinity,
-              child:Center(
-                  child: Image.network('https://media.giphy.com/media/PUYgk3wpNk0WA/giphy.gif',
-                    width: MediaQuery.of(context).size.width,
+            return  Center(
+              child: Container(
+                  width: double.infinity,
+                  child: LoadingIndicator(
+                    indicatorType: Indicator.ballScale,
+                    colors: [Color.fromARGB(212, 184, 233, 225)],
                   )
-              ),);
+              ),
+            );
           }
         },
       ),

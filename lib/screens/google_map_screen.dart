@@ -57,7 +57,7 @@ class _GoogleMapscreenState extends State<GoogleMapScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Google Map')),
+      appBar: AppBar(title: Text('Google Map'),backgroundColor: Color.fromARGB(255, 124, 208, 219)),
       body: GoogleMap(
         mapType: MapType.hybrid,
         initialCameraPosition: CameraPosition(
